@@ -3,13 +3,17 @@
         var query = $('#searchQuery').val();
         $.ajax({
             type: "POST",
-            url: '/Movie/ViewAllMovies',
+            url: '/Movie/ViewAllMovies',)
             data: { 'searchQuery': query },
             success: function (data) {
+                $('#viewAllContent').show();
                 $('#viewAllContent').html(data);
+                $('#searchWarning').hide();
             },
             error: function () {
-                $('#viewAllContent').html('unable to render page!');
+                $('#viewAllContent').hide();
+                $('#searchWarning span').html('Unable to find <strong>' + query + '</strong>, please try again.')
+                $('#searchWarning').show();
             }
         });
 

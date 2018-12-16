@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MovieDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Movie">
+    <Key>
+      <PropertyRef Name="imdbID" />
+    </Key>
+    <Property Name="imdbID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Title" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Genre" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Synopsis" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Cast" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityContainer Name="DBModel" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Movies" EntityType="Self.Movie" />
+  </EntityContainer>
+</Schema>

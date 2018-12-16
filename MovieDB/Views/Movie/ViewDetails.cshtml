@@ -1,0 +1,49 @@
+﻿@model MovieDB.Models.imdbModel
+@{
+    ViewBag.Title = "ViewDetails";
+    Layout = null;
+}
+
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+    <h4 class="modal-title" id="exampleModalLabel">Movie Details</h4>
+</div>
+<div class="modal-body">
+    <div class='row'>
+        <div class='col-md-4'>
+            <div class="movieThumbnail" style="float: left; margin-right: 10px">
+                <img src="@Model.Poster" width="170" height="250">
+            </div>
+        </div>
+        <div class='col-md-8'>
+            <dl>
+                <dd class="h2">
+                    @Model.Title
+                </dd>
+                <dt>
+                    Genre:
+                </dt>
+                <dd>
+                    @Model.Genre
+                </dd>
+                <dt>
+                    Plot:
+                </dt>
+                <dd>
+                    @Model.Plot
+                </dd>
+                <dt>
+                    Cast:
+                </dt>
+                <dd>
+                    @Model.Actors
+                </dd>
+            </dl>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-success" data-dismiss="modal">Add</button>
+        <a class="btn btn-primary" href="https://www.imdb.com/title/@Model.imdbID"><span class="glyphicon glyphicon-eye-open"></span> View on IMDb</a>
+    </div>
+</div>
+

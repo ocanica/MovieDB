@@ -1,0 +1,52 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+/* Custom settings */
+.row-flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+[class*="col-"] {
+    margin: 10px 0px;
+    flex: 0 0 230px;
+}
+
+ul.nav.nav-tabs {
+    margin: 10px 0px;
+}
+
+    ul.nav.nav-tabs li:not(.active) a {
+        background-color: #eeeeee;
+        color: grey;
+    }
+
+    ul.nav.nav-tabs li:not(.active) a:hover {
+        background-color: #cccccc;
+    }
+
+.movieThumbnail img {
+    border-radius: 4px;
+}

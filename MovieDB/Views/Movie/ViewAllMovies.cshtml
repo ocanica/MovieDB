@@ -1,0 +1,26 @@
+﻿@model IEnumerable<MovieDB.Models.omdbModel>
+@{
+    ViewBag.Title = "ViewAllMovies";
+    Layout = null;
+}
+
+<div class="row row-flex text-center text-lg-left">
+    @foreach (var item in Model)
+    {
+        <div class="movieThumbnail col-lg-3 col-md-3 col-sm-4 col-xm-1">
+            <a href="javascript:void(0);" class="anchorDetails" data-id="@item.imdbID"><img src="@item.Poster" width="170" height="250"></a>
+            <h4>@item.Title</h4>
+            <p>@item.Year</p>
+        </div>
+    }
+</div>
+
+<div id='movieModal' class='modal fade'>
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div id='movieModalContent'></div>
+        </div>
+    </div>
+</div>
+
+

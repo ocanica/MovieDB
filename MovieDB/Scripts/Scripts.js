@@ -3,7 +3,7 @@
         var query = $('#searchQuery').val();
         $.ajax({
             type: "POST",
-            url: '/Movie/ViewAllMovies',)
+            url: '/Movie/ViewAllMovies',
             data: { 'searchQuery': query },
             success: function (data) {
                 $('#viewAllContent').show();

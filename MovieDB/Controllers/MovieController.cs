@@ -34,11 +34,11 @@ namespace MovieDB.Controllers
             return PartialView(GetMovieDetails(imdbID));
         }
 
-        IEnumerable<Movie> GetUserMovies()
+        IEnumerable<UserMovy> GetUserMovies()
         {
             using (DBModel db = new DBModel())
             {
-                return db.Movies.ToList<Movie>();
+                return db.UserMovies.ToList<UserMovy>();
             }
         }
 

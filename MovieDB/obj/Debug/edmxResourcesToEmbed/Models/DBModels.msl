@@ -2,13 +2,24 @@
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="MovieDBModelStoreContainer" CdmEntityContainer="DBModel">
     <EntitySetMapping Name="Movies">
-      <EntityTypeMapping TypeName="MovieDBModel.Movie">
-        <MappingFragment StoreEntitySet="Movie">
+      <EntityTypeMapping TypeName="IsTypeOf(MovieDBModel.Movie)">
+        <MappingFragment StoreEntitySet="Movies">
           <ScalarProperty Name="imdbID" ColumnName="imdbID" />
           <ScalarProperty Name="Title" ColumnName="Title" />
           <ScalarProperty Name="Genre" ColumnName="Genre" />
           <ScalarProperty Name="Synopsis" ColumnName="Synopsis" />
           <ScalarProperty Name="Cast" ColumnName="Cast" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserMovies">
+      <EntityTypeMapping TypeName="IsTypeOf(MovieDBModel.UserMovy)">
+        <MappingFragment StoreEntitySet="UserMovies">
+          <ScalarProperty Name="imdbID" ColumnName="imdbID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Genre" ColumnName="Genre" />
+          <ScalarProperty Name="Rating" ColumnName="Rating" />
+          <ScalarProperty Name="Favourite" ColumnName="Favourite" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

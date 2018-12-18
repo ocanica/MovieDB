@@ -25,22 +25,13 @@ namespace MovieDB.Controllers
 
         public ActionResult ViewAllMovies(string searchQuery)
         {
-            using (WebClient webClient = new WebClient())
-            {
-                var jsonData = webClient.DownloadString($"http://www.omdbapi.com/?apikey=75f14f13&s={searchQuery}");
-                var jsonResponse = JObject.Parse(jsonData).SelectToken("Search").ToObject<IEnumerable<omdbModel>>();
-                return View(jsonResponse);
-            }
+            return View(GetAllMovies(searchQuery));
+
         }
 
         public ActionResult ViewDetails(string imdbID)
         {
-            using (WebClient webClient = new WebClient())
-            {
-                var jsonData = webClient.DownloadString($"http://www.omdbapi.com/?apikey=75f14f13&i={imdbID}");
-                var jsonResponse = JsonConvert.DeserializeObject<imdbModel>(jsonData);
-                return PartialView(jsonResponse);
-            }
+            return PartialView(GetMovieDetails(imdbID));
         }
 
         IEnumerable<Movie> GetUserMovies()
@@ -51,17 +42,43 @@ namespace MovieDB.Controllers
             }
         }
 
-        /*
-        IEnumerable<omdbModel> GetAllMovies()
+        IEnumerable<omdbModel> GetAllMovies(string searchQuery)
         {
             using (WebClient webClient = new WebClient())
             {
-                var jsonData = webClient.DownloadString("http://www.omdbapi.com/?apikey=75f14f13&s=batman");
-                // var objResponse = JObject.Parse(jsonData).SelectToken("Search").ToString();
+                var jsonData = webClient.DownloadString($"http://www.omdbapi.com/?apikey=75f14f13&s={searchQuery}&type=movie");
                 var jsonResponse = JObject.Parse(jsonData).SelectToken("Search").ToObject<IEnumerable<omdbModel>>();
                 return jsonResponse;
             }
         }
-        */
+
+        public imdbModel GetMovieDetails(string imdbID)
+        {
+            using (WebClient webClient = new WebClient())
+            {
+                var jsonData = webClient.DownloadString($"http://www.omdbapi.com/?apikey=75f14f13&i={imdbID}");
+                var jsonResponse = JsonConvert.DeserializeObject<imdbModel>(jsonData);
+                return jsonResponse;
+            }
+        }
+
+        public void AddMovie(string imdbID)
+        {
+            UserMovy userMovie = new UserMovy();
+            imdbModel imdbMovie = new imdbModel();
+
+            imdbMovie = GetMovieDetails(imdbID);
+
+            userMovie.imdbID = imdbMovie.imdbID;
+            userMovie.Title = imdbMovie.Title;
+            userMovie.Genre = imdbMovie.Genre;
+
+            using (DBModel db = new DBModel())
+            {
+                db.UserMovies.Add(userMovie);
+                db.SaveChanges();
+            }
+        }
+
     }
 }

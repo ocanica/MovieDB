@@ -12,5 +12,16 @@
   </EntityType>
   <EntityContainer Name="DBModel" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Movies" EntityType="Self.Movie" />
+    <EntitySet Name="UserMovies" EntityType="MovieDBModel.UserMovy" />
   </EntityContainer>
+  <EntityType Name="UserMovy">
+    <Key>
+      <PropertyRef Name="imdbID" />
+    </Key>
+    <Property Name="imdbID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Title" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Genre" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Rating" Type="Int32" />
+    <Property Name="Favourite" Type="Boolean" />
+  </EntityType>
 </Schema>

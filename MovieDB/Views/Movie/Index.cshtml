@@ -5,12 +5,12 @@
 
 <ul class="nav nav-tabs">
     <li class="active"><a data-toggle="tab" href="#viewAll">View All</a></li>
-    <li><a data-toggle="tab" href="#catalogue">Catalogue</a></li>
+    <li><a data-toggle="tab" href="#catalogue">Library</a></li>
 </ul>
 
 <div class="tab-content">
     <div id="viewAll" class="tab-pane fade in active">
-
+        
         <form id="searchBox" class="navbar-form" role="search">
             <div class="input-group add-on">
                 <input class="form-control" placeholder="Search IMDb" id="searchQuery" type="text">
@@ -20,12 +20,12 @@
             </div>
         </form>
 
-        <div id='viewAllContent'></div>
-
         <div id="searchWarning" class="alert alert-danger" style="display: none;">
             <button class="close" data-dismiss="alert">&times;</button>
             <span></span>
         </div>
+
+        <div id='viewAllContent'></div>
 
     </div>
 

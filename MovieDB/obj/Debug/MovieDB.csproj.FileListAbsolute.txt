@@ -48,6 +48,8 @@ C:\Users\ocani\Google Drive\Code\projects\csharp\MovieDB\MovieDB\bin\roslyn\vbc.
 C:\Users\ocani\Google Drive\Code\projects\csharp\MovieDB\MovieDB\bin\roslyn\VBCSCompiler.exe
 C:\Users\ocani\Google Drive\Code\projects\csharp\MovieDB\MovieDB\bin\roslyn\VBCSCompiler.exe.config
 C:\Users\ocani\Google Drive\Code\projects\csharp\MovieDB\MovieDB\bin\Antlr3.Runtime.dll
+C:\Users\ocani\Google Drive\Code\projects\csharp\MovieDB\MovieDB\bin\EntityFramework.dll
+C:\Users\ocani\Google Drive\Code\projects\csharp\MovieDB\MovieDB\bin\EntityFramework.SqlServer.dll
 C:\Users\ocani\Google Drive\Code\projects\csharp\MovieDB\MovieDB\bin\Microsoft.AspNet.TelemetryCorrelation.dll
 C:\Users\ocani\Google Drive\Code\projects\csharp\MovieDB\MovieDB\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 C:\Users\ocani\Google Drive\Code\projects\csharp\MovieDB\MovieDB\bin\Microsoft.Web.Infrastructure.dll
@@ -61,6 +63,8 @@ C:\Users\ocani\Google Drive\Code\projects\csharp\MovieDB\MovieDB\bin\System.Web.
 C:\Users\ocani\Google Drive\Code\projects\csharp\MovieDB\MovieDB\bin\System.Web.WebPages.dll
 C:\Users\ocani\Google Drive\Code\projects\csharp\MovieDB\MovieDB\bin\System.Web.WebPages.Razor.dll
 C:\Users\ocani\Google Drive\Code\projects\csharp\MovieDB\MovieDB\bin\WebGrease.dll
+C:\Users\ocani\Google Drive\Code\projects\csharp\MovieDB\MovieDB\bin\EntityFramework.xml
+C:\Users\ocani\Google Drive\Code\projects\csharp\MovieDB\MovieDB\bin\EntityFramework.SqlServer.xml
 C:\Users\ocani\Google Drive\Code\projects\csharp\MovieDB\MovieDB\bin\System.Web.Helpers.xml
 C:\Users\ocani\Google Drive\Code\projects\csharp\MovieDB\MovieDB\bin\System.Web.Mvc.xml
 C:\Users\ocani\Google Drive\Code\projects\csharp\MovieDB\MovieDB\bin\System.Web.Optimization.xml
@@ -73,12 +77,8 @@ C:\Users\ocani\Google Drive\Code\projects\csharp\MovieDB\MovieDB\bin\Antlr3.Runt
 C:\Users\ocani\Google Drive\Code\projects\csharp\MovieDB\MovieDB\bin\System.Diagnostics.DiagnosticSource.xml
 C:\Users\ocani\Google Drive\Code\projects\csharp\MovieDB\MovieDB\bin\Microsoft.AspNet.TelemetryCorrelation.xml
 C:\Users\ocani\Google Drive\Code\projects\csharp\MovieDB\MovieDB\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\ocani\Google Drive\Code\projects\csharp\MovieDB\MovieDB\obj\Debug\MovieDB.csprojAssemblyReference.cache
 C:\Users\ocani\Google Drive\Code\projects\csharp\MovieDB\MovieDB\obj\Debug\MovieDB.csproj.CoreCompileInputs.cache
 C:\Users\ocani\Google Drive\Code\projects\csharp\MovieDB\MovieDB\obj\Debug\MovieDB.csproj.CopyComplete
 C:\Users\ocani\Google Drive\Code\projects\csharp\MovieDB\MovieDB\obj\Debug\MovieDB.dll
 C:\Users\ocani\Google Drive\Code\projects\csharp\MovieDB\MovieDB\obj\Debug\MovieDB.pdb
-C:\Users\ocani\Google Drive\Code\projects\csharp\MovieDB\MovieDB\bin\EntityFramework.dll
-C:\Users\ocani\Google Drive\Code\projects\csharp\MovieDB\MovieDB\bin\EntityFramework.SqlServer.dll
-C:\Users\ocani\Google Drive\Code\projects\csharp\MovieDB\MovieDB\bin\EntityFramework.xml
-C:\Users\ocani\Google Drive\Code\projects\csharp\MovieDB\MovieDB\bin\EntityFramework.SqlServer.xml
+C:\Users\ocani\Google Drive\Code\projects\csharp\MovieDB\MovieDB\obj\Debug\MovieDB.csprojAssemblyReference.cache

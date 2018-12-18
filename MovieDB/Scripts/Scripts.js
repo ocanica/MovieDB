@@ -21,7 +21,6 @@
     });
 });
 
-
 $(function () {
     $("body").delegate(".anchorDetails", "click", function () {
         var id = $(this).data('id');
@@ -36,13 +35,26 @@ $(function () {
                 $('#movieModal').modal('show');
             },
             error: function () {
-                alert("Dynamic content load failed.");
+                alert("Failed to load requested movie.");
             }
         });
     });
 });
 
-
-
-
-
+$(function () {
+    $("body").delegate(".anchorAddMovie", "click", function () {
+        var id = $(this).data('id');
+        $.ajax({
+            type: "GET",
+            url: '/Movie/AddMovie',
+            contentType: "application/json",
+            data: { 'imdbID': id },
+            success: function () {
+                $('#movieModal').modal('toggle');
+            },
+            error: function (xhr) {
+                alert("Failed to add movie to library: " + xhr.status);
+            }
+        });
+    });
+});

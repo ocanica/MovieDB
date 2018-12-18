@@ -26,5 +26,6 @@ namespace MovieDB.Models
         }
     
         public virtual DbSet<Movie> Movies { get; set; }
+        public virtual DbSet<UserMovy> UserMovies { get; set; }
     }
 }

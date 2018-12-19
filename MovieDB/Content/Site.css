@@ -23,7 +23,7 @@ textarea {
     max-width: 280px;
 }
 
-/* Custom settings */
+/* Bootstrap overwrites */
 .row-flex {
     display: flex;
     flex-wrap: wrap;
@@ -32,6 +32,10 @@ textarea {
 [class*="col-"] {
     margin: 10px 0px;
     flex: 0 0 230px;
+}
+
+.table-condensed > tbody > tr > td {
+    vertical-align: middle;
 }
 
 ul.nav.nav-tabs {

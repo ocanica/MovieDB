@@ -18,6 +18,8 @@ namespace MovieDB.Models
         public string Actors { get; set; }
         [JsonProperty("Poster")]
         public string Poster { get; set; }
+        [JsonProperty("imdbRating")]
+        public string imdbRating { get; set; }
         [JsonProperty("imdbID")]
         public string imdbID { get; set; }
     }

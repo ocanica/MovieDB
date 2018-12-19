@@ -33,6 +33,30 @@ namespace MovieDB.Controllers
             return PartialView(GetMovieDetails(imdbID));
         }
 
+        public void AddMovie(string imdbID)
+        {
+            UserMovy userMovie = new UserMovy();
+            imdbModel imdbMovie = new imdbModel();
+
+            imdbMovie = GetMovieDetails(imdbID);
+
+            userMovie.imdbID = imdbMovie.imdbID;
+            userMovie.Title = imdbMovie.Title;
+            userMovie.Genre = imdbMovie.Genre;
+            userMovie.Poster = imdbMovie.Poster;
+
+            using (DBModel db = new DBModel())
+            {
+                db.UserMovies.Add(userMovie);
+                db.SaveChanges();
+            }
+        }
+
+        public void RemoveMovie()
+        {
+
+        }
+
         IEnumerable<omdbModel> GetAllMovies(string searchQuery)
         {
             using (WebClient webClient = new WebClient())
@@ -58,25 +82,6 @@ namespace MovieDB.Controllers
                 var jsonData = webClient.DownloadString($"http://www.omdbapi.com/?apikey=75f14f13&i={imdbID}");
                 var jsonResponse = JsonConvert.DeserializeObject<imdbModel>(jsonData);
                 return jsonResponse;
-            }
-        }
-
-        public void AddMovie(string imdbID)
-        {
-            UserMovy userMovie = new UserMovy();
-            imdbModel imdbMovie = new imdbModel();
-
-            imdbMovie = GetMovieDetails(imdbID);
-
-            userMovie.imdbID = imdbMovie.imdbID;
-            userMovie.Title = imdbMovie.Title;
-            userMovie.Genre = imdbMovie.Genre;
-
-            using (DBModel db = new DBModel())
-            {
-                db.UserMovies.Add(userMovie);
-                db.SaveChanges();
-                db.Entry(userMovie).Reload();
             }
         }
 

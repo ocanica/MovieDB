@@ -15,6 +15,7 @@
     <EntitySetMapping Name="UserMovies">
       <EntityTypeMapping TypeName="IsTypeOf(MovieDBModel.UserMovy)">
         <MappingFragment StoreEntitySet="UserMovies">
+          <ScalarProperty Name="Poster" ColumnName="Poster" />
           <ScalarProperty Name="imdbID" ColumnName="imdbID" />
           <ScalarProperty Name="Title" ColumnName="Title" />
           <ScalarProperty Name="Genre" ColumnName="Genre" />

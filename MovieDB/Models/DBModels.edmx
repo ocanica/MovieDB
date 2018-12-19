@@ -4,32 +4,33 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="MovieDBModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-  <EntityContainer Name="MovieDBModelStoreContainer">
-    <EntitySet Name="Movies" EntityType="MovieDBModel.Store.Movies" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="UserMovies" EntityType="MovieDBModel.Store.UserMovies" store:Type="Tables" Schema="dbo" />
-  </EntityContainer>
-  <EntityType Name="Movies">
-    <Key>
-      <PropertyRef Name="imdbID" />
-    </Key>
-    <Property Name="imdbID" Type="varchar" Nullable="false" MaxLength="50" />
-    <Property Name="Title" Type="varchar" Nullable="true" MaxLength="100" />
-    <Property Name="Genre" Type="varchar" Nullable="true" MaxLength="250" />
-    <Property Name="Synopsis" Type="varchar" Nullable="true" MaxLength="500" />
-    <Property Name="Cast" Type="varchar" Nullable="true" MaxLength="250" />
-  </EntityType>
-  <EntityType Name="UserMovies">
-    <Key>
-      <PropertyRef Name="imdbID" />
-    </Key>
-    <Property Name="imdbID" Type="varchar" Nullable="false" MaxLength="50" />
-    <Property Name="Title" Type="varchar" Nullable="true" MaxLength="150" />
-    <Property Name="Genre" Type="varchar" Nullable="true" MaxLength="150" />
-    <Property Name="Rating" Type="int" Nullable="true" />
-    <Property Name="Favourite" Type="bit" Nullable="true" />
-  </EntityType>
-</Schema></edmx:StorageModels>
+    <Schema Namespace="MovieDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Movies">
+          <Key>
+            <PropertyRef Name="imdbID" />
+          </Key>
+          <Property Name="imdbID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Title" Type="varchar" MaxLength="100" />
+          <Property Name="Genre" Type="varchar" MaxLength="250" />
+          <Property Name="Synopsis" Type="varchar" MaxLength="500" />
+          <Property Name="Cast" Type="varchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="UserMovies">
+          <Key>
+            <PropertyRef Name="imdbID" />
+          </Key>
+          <Property Name="imdbID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Title" Type="varchar" MaxLength="150" />
+          <Property Name="Genre" Type="varchar" MaxLength="150" />
+          <Property Name="Rating" Type="int" />
+          <Property Name="Favourite" Type="bit" />
+          <Property Name="Poster" Type="varchar" MaxLength="250" />
+        </EntityType>
+        <EntityContainer Name="MovieDBModelStoreContainer">
+          <EntitySet Name="Movies" EntityType="Self.Movies" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserMovies" EntityType="Self.UserMovies" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="MovieDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -56,6 +57,7 @@
           <Property Name="Genre" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
           <Property Name="Rating" Type="Int32" />
           <Property Name="Favourite" Type="Boolean" />
+          <Property Name="Poster" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -77,7 +79,8 @@
     <EntitySetMapping Name="UserMovies">
       <EntityTypeMapping TypeName="IsTypeOf(MovieDBModel.UserMovy)">
         <MappingFragment StoreEntitySet="UserMovies">
-          <ScalarProperty Name="imdbID" ColumnName="imdbID" />
+          <ScalarProperty Name="Poster" ColumnName="Poster" />
+                <ScalarProperty Name="imdbID" ColumnName="imdbID" />
           <ScalarProperty Name="Title" ColumnName="Title" />
           <ScalarProperty Name="Genre" ColumnName="Genre" />
           <ScalarProperty Name="Rating" ColumnName="Rating" />

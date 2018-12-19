@@ -1,47 +1,51 @@
 ﻿@model IEnumerable<MovieDB.Models.UserMovy>
 
 @{
-    ViewBag.Title = "ViewUserMovies1";
+    ViewBag.Title = "ViewUserMovies";
     Layout = null;
 }
 
-<table id="UserMoviesTable" class="table table-condensed table-striped">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Title)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Genre)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Rating)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Favourite)
-        </th>
-        <th></th>
-    </tr>
+<table id="UserMoviesTable" class="table table-condensed table-striped movieThumbnail h4">
+    <thead>
+        <tr>
+            <th>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Title)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Genre)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Rating)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Favourite)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.imdbID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.imdbID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.imdbID })
-        </td>
-    </tr>
-}
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Genre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Favourite)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <img src="@Html.DisplayFor(model => item.Poster)" width="85" height="125">
+                </td>
+                <td>
+                    <strong>@Html.DisplayFor(modelItem => item.Title)</strong>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Genre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Rating)
+                </td>
+                <td>
+                    @Html.ActionLink("Delete", "Delete", new { id = item.imdbID })
+                </td>
+            </tr>
+        }
+    </tbody>
+
 
 </table>

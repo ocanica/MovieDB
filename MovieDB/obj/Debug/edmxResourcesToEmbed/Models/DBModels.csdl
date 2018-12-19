@@ -23,5 +23,6 @@
     <Property Name="Genre" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
     <Property Name="Rating" Type="Int32" />
     <Property Name="Favourite" Type="Boolean" />
+    <Property Name="Poster" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
   </EntityType>
 </Schema>

@@ -41,7 +41,7 @@
                     @Html.DisplayFor(modelItem => item.Rating)
                 </td>
                 <td>
-                    @Html.ActionLink("Delete", "Delete", new { id = item.imdbID })
+                    <a class="anchorRemoveMovie btn btn-danger btn-sm" data-url="@Url.Action("ViewUserMovies", "Movie")" data-id="@item.imdbID"><i class="fa fa-trash" aria-hidden="true"></i></a>
                 </td>
             </tr>
         }

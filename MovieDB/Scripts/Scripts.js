@@ -61,3 +61,18 @@ $(function () {
     });
 });
 
+$(function () {
+    $("body").delegate(".anchorRemoveMovie", "click", function () {
+        var id = $(this).data('id');
+        var url = $(this).data('url');
+        $.ajax({
+            type: 'GET',
+            url: '/Movie/RemoveMovie',
+            data: { 'imdbID': id },
+            success: function () {
+                $('#catalogue').load(url);
+            }
+        });
+    });
+});
+

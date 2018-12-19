@@ -52,9 +52,13 @@ namespace MovieDB.Controllers
             }
         }
 
-        public void RemoveMovie()
+        public void RemoveMovie(string imdbID)
         {
-
+            using (DBModel db = new DBModel())
+            {
+                db.UserMovies.Remove(db.UserMovies.SingleOrDefault<UserMovy>(x => x.imdbID == imdbID));
+                db.SaveChanges();
+            }
         }
 
         IEnumerable<omdbModel> GetAllMovies(string searchQuery)

@@ -44,12 +44,14 @@ $(function () {
 $(function () {
     $("body").delegate(".anchorAddMovie", "click", function () {
         var id = $(this).data('id');
+        var url = $(this).data('url');
         $.ajax({
             type: "GET",
             url: '/Movie/AddMovie',
             contentType: "application/json",
             data: { 'imdbID': id },
             success: function () {
+                $('#catalogue').load("url");
                 $('#movieModal').modal('toggle');
             },
             error: function (xhr) {
@@ -58,3 +60,4 @@ $(function () {
         });
     });
 });
+

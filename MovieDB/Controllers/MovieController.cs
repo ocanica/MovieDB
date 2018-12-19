@@ -18,28 +18,34 @@ namespace MovieDB.Controllers
             return View();
         }
 
-        public ActionResult ViewUserMovies()
+        public ActionResult ViewUserMovies1()
         {
-            return View(GetUserMovies());
+            return PartialView(GetUserMovies());
         }
+
+        /*public ActionResult ViewUserMovies()
+        {
+            return View();
+        }
+        
+
+        public ActionResult LoadMoviesTable()
+        {
+            using (DBModel db = new DBModel())
+            {
+                var movies = db.UserMovies.ToList<UserMovy>();
+                return Json(new { data = movies }, JsonRequestBehavior.AllowGet);
+            }
+        }*/
 
         public ActionResult ViewAllMovies(string searchQuery)
         {
             return View(GetAllMovies(searchQuery));
-
         }
 
         public ActionResult ViewDetails(string imdbID)
         {
             return PartialView(GetMovieDetails(imdbID));
-        }
-
-        IEnumerable<UserMovy> GetUserMovies()
-        {
-            using (DBModel db = new DBModel())
-            {
-                return db.UserMovies.ToList<UserMovy>();
-            }
         }
 
         IEnumerable<omdbModel> GetAllMovies(string searchQuery)
@@ -49,6 +55,14 @@ namespace MovieDB.Controllers
                 var jsonData = webClient.DownloadString($"http://www.omdbapi.com/?apikey=75f14f13&s={searchQuery}&type=movie");
                 var jsonResponse = JObject.Parse(jsonData).SelectToken("Search").ToObject<IEnumerable<omdbModel>>();
                 return jsonResponse;
+            }
+        }
+
+        IEnumerable<UserMovy> GetUserMovies()
+        {
+            using (DBModel db = new DBModel())
+            {
+                return db.UserMovies.ToList<UserMovy>();
             }
         }
 
@@ -77,6 +91,7 @@ namespace MovieDB.Controllers
             {
                 db.UserMovies.Add(userMovie);
                 db.SaveChanges();
+                db.Entry(userMovie).Reload();
             }
         }
 

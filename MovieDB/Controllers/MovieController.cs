@@ -18,25 +18,10 @@ namespace MovieDB.Controllers
             return View();
         }
 
-        public ActionResult ViewUserMovies1()
+        public ActionResult ViewUserMovies()
         {
             return PartialView(GetUserMovies());
         }
-
-        /*public ActionResult ViewUserMovies()
-        {
-            return View();
-        }
-        
-
-        public ActionResult LoadMoviesTable()
-        {
-            using (DBModel db = new DBModel())
-            {
-                var movies = db.UserMovies.ToList<UserMovy>();
-                return Json(new { data = movies }, JsonRequestBehavior.AllowGet);
-            }
-        }*/
 
         public ActionResult ViewAllMovies(string searchQuery)
         {

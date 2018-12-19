@@ -51,7 +51,7 @@ $(function () {
             contentType: "application/json",
             data: { 'imdbID': id },
             success: function () {
-                $('#catalogue').load("url");
+                $('#catalogue').load(url);
                 $('#movieModal').modal('toggle');
             },
             error: function (xhr) {

@@ -76,3 +76,9 @@ $(function () {
     });
 });
 
+$(function () {
+    var id = $('.anchorFavouriteMovie').data('id');
+
+    if (id == 'False')
+        $('.anchorFavouriteMovie').html('<i class="fas fa-star"></i>');
+});

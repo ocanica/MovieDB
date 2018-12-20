@@ -8,9 +8,8 @@
 <table id="UserMoviesTable" class="table table-condensed table-striped movieThumbnail h4">
     <thead>
         <tr>
-            <th>
-
-            </th>
+            <th></th>
+            <th></th>
             <th>
                 @Html.DisplayNameFor(model => model.Title)
             </th>
@@ -18,7 +17,7 @@
                 @Html.DisplayNameFor(model => model.Genre)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Favourite)
+                @Html.DisplayNameFor(model => model.Rating)
             </th>
             <th></th>
         </tr>
@@ -28,8 +27,11 @@
         @foreach (var item in Model)
         {
             <tr>
+                <td  >
+                    <a class="anchorFavouriteMovie btn btn-lg" data-id="@item.Favourite"><i class="far fa-star"></i></a>
+                </td>
                 <td>
-                    <img src="@Html.DisplayFor(model => item.Poster)" width="85" height="125">
+                    <img src="@item.Poster" width="85" height="125">
                 </td>
                 <td>
                     <strong>@Html.DisplayFor(modelItem => item.Title)</strong>

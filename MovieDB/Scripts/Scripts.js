@@ -1,4 +1,21 @@
-﻿$(function () {
+﻿
+
+$(function () {
+    $('.anchorFavouriteMovie').each(function () {
+        var idArray = $(this).data('id');
+        var id = idArray[0];
+        var bool = idArray[1];
+
+        if (bool == 'True') {
+            $('#star').html('<i class="fas fa-star"></i>');
+        } else if (bool == 'False') {
+            $('#star').html('<i class="far fa-star"></i>');
+        }
+        
+    });
+});
+
+$(function () {
     $("#searchBox").submit(function (event) {
         var query = $('#searchQuery').val();
         $.ajax({
@@ -77,8 +94,20 @@ $(function () {
 });
 
 $(function () {
-    var id = $('.anchorFavouriteMovie').data('id');
+    $("body").delegate(".anchorFavouriteMovie", "click", function () {
+        var idArray = $(this).data('id');
+        var url = $(this).data('url');
 
-    if (id == 'False')
-        $('.anchorFavouriteMovie').html('<i class="fas fa-star"></i>');
+        var id = idArray[0];
+        var bool = idArray[1];
+
+        $.ajax({
+            type: 'GET',
+            url: '/Movie/ToggleFavourite',
+            data: { 'imdbID': id, 'favouriteBool': bool},
+            success: function () {
+                $('#catalogue').load(url);
+            }
+        });
+    });
 });

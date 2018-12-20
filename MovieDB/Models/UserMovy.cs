@@ -20,5 +20,5 @@ namespace MovieDB.Models
         public Nullable<int> Rating { get; set; } = 3;
         public Nullable<bool> Favourite { get; set; } = false;
         public string Poster { get; set; }
-    }^
+    }
 }

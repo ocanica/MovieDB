@@ -56,7 +56,28 @@ namespace MovieDB.Controllers
         {
             using (DBModel db = new DBModel())
             {
-                db.UserMovies.Remove(db.UserMovies.SingleOrDefault<UserMovy>(x => x.imdbID == imdbID));
+                db.UserMovies.Remove(db.UserMovies.SingleOrDefault(x => x.imdbID == imdbID));
+                db.SaveChanges();
+            }
+        }
+
+        public void ToggleFavourite(string imdbID, string favouriteBool)
+        {
+            bool boolean = bool.Parse(favouriteBool);
+
+            using (DBModel db = new DBModel())
+            {
+                var root = db.UserMovies.SingleOrDefault(x => x.imdbID == imdbID);
+                var query = db.UserMovies.SingleOrDefault(x => x.imdbID == imdbID).Favourite;
+
+                if (boolean == query)
+                {
+                    root.Favourite = !boolean;
+                } else if (boolean != query)
+                {
+                    root.Favourite = !query;
+                }
+
                 db.SaveChanges();
             }
         }

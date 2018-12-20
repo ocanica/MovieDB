@@ -28,7 +28,7 @@
         {
             <tr>
                 <td  >
-                    <a class="anchorFavouriteMovie btn btn-lg" data-id="@item.Favourite"><i class="far fa-star"></i></a>
+                    <a class="anchorFavouriteMovie btn btn-lg" id="star" data-id='["@item.imdbID", "@item.Favourite"]' data-url="@Url.Action("ViewUserMovies", "Movie")"></a>
                 </td>
                 <td>
                     <img src="@item.Poster" width="85" height="125">

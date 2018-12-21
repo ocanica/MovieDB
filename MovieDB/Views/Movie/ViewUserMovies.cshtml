@@ -5,6 +5,8 @@
     Layout = null;
 }
 
+<a id="test" class="btn btn-primary">test</a>
+
 <table id="UserMoviesTable" class="table table-condensed table-striped movieThumbnail h4">
     <thead>
         <tr>
@@ -28,19 +30,19 @@
         {
             <tr>
                 <td  >
-                    <a class="anchorFavouriteMovie btn btn-lg" id="star" data-id='["@item.imdbID", "@item.Favourite"]' data-url="@Url.Action("ViewUserMovies", "Movie")"></a>
+                    <a class="anchorFavouriteMovie btn btn-lg" id="@item.imdbID" data-id='["@item.imdbID", "@item.Favourite"]' data-url="@Url.Action("ViewUserMovies", "Movie")"></a>
                 </td>
                 <td>
                     <img src="@item.Poster" width="85" height="125">
                 </td>
                 <td>
-                    <strong>@Html.DisplayFor(modelItem => item.Title)</strong>
+                    @item.Title
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Genre)
+                    @item.Genre
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Rating)
+                    @item.Rating
                 </td>
                 <td>
                     <a class="anchorRemoveMovie btn btn-danger btn-sm" data-url="@Url.Action("ViewUserMovies", "Movie")" data-id="@item.imdbID"><i class="fa fa-trash" aria-hidden="true"></i></a>

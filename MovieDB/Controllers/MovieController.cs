@@ -61,7 +61,7 @@ namespace MovieDB.Controllers
             }
         }
 
-        public bool ToggleFavourite(string imdbID, string favouriteBool)
+        public void ToggleFavourite(string imdbID, string favouriteBool)
         {
             bool boolean = bool.Parse(favouriteBool);
 
@@ -79,8 +79,6 @@ namespace MovieDB.Controllers
                 }
 
                 db.SaveChanges();
-
-                return (bool)root.Favourite;
             }
         }
 

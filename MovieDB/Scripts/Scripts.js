@@ -1,4 +1,4 @@
-﻿function drawStars() {
+﻿$(function drawStars() {
     $('.anchorFavouriteMovie').each(function () {
         var idArray = $(this).data('id');
         var bool = idArray[1];
@@ -9,9 +9,8 @@
             $(this).html('<i class="far fa-star"></i>');
         }
     });
-}
+});
 
-drawStars();
 
 $(function () {
     $("#searchBox").submit(function (event) {
@@ -91,10 +90,10 @@ $(function () {
     });
 });
 
+
 $(function () {
     $("#catalogue").delegate(".anchorFavouriteMovie", "click", function () {
         var idArray = $(this).data('id');
-        var url = $(this).data('url');
 
         var id = idArray[0];
         var bool = idArray[1];
@@ -103,13 +102,7 @@ $(function () {
             type: 'GET',
             url: '/Movie/ToggleFavourite',
             data: { 'imdbID': id, 'favouriteBool': bool},
-            success: function (data) {
-                if (data == 'True') {
-                    $('#' + id).html('<i class="fas fa-star"></i>');
-                } else if (data == 'False') {
-                    $('#' + id).html('<i class="far fa-star"></i>');
-                }
-            }
+            success: function () {}
         });
     });
 });

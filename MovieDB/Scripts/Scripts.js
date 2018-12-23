@@ -1,16 +1,19 @@
-﻿$(function drawStars() {
+﻿
+function drawRatings () {
     $('.anchorFavouriteMovie').each(function () {
+        var fav = $(this);
         var idArray = $(this).data('id');
         var bool = idArray[1];
 
         if (bool == 'True') {
-            $(this).html('<i class="fas fa-star"></i>');
+            $(fav).html('<i class="fas fa-star"></i>');
         } else if (bool == 'False') {
-            $(this).html('<i class="far fa-star"></i>');
+            $(fav).html('<i class="far fa-star"></i>');
         }
     });
-});
+}
 
+drawRatings();
 
 $(function () {
     $("#searchBox").submit(function (event) {
@@ -23,7 +26,6 @@ $(function () {
                 $('#viewAllContent').show();
                 $('#viewAllContent').html(data);
                 $('#searchWarning').hide();
-                alert(myClass);
             },
             error: function () {
                 $('#viewAllContent').hide();
@@ -93,8 +95,9 @@ $(function () {
 
 $(function () {
     $("#catalogue").delegate(".anchorFavouriteMovie", "click", function () {
+        var star = $(this);
+        var url = $(this).data('url');
         var idArray = $(this).data('id');
-
         var id = idArray[0];
         var bool = idArray[1];
 
@@ -102,7 +105,13 @@ $(function () {
             type: 'GET',
             url: '/Movie/ToggleFavourite',
             data: { 'imdbID': id, 'favouriteBool': bool},
-            success: function () {}
+            success: function (data) {
+                if (data == 'True') {
+                    $('#'+id).html('<i class="fas fa-star"></i>');
+                } else if (data == 'False') {
+                    $('#'+id).html('<i class="far fa-star"></i>');
+                }
+            }
         });
     });
 });

@@ -5,7 +5,7 @@ A single page IMDb clone project built in C# ASP.net and MSSQL. The app allows t
 ### Getting Started
 Simply clone or fork (to contribute). Besides requiring MSSQL all other dependencies are already pre-installed i.e. jQuery.
 
-##### Deployment
+#### Deployment
 The app is unpublished and currently not hosted on any servers. So in order to run, do so in debug mode using either VSCode or Visual Studio.
 
 

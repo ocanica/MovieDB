@@ -2,6 +2,10 @@
 
 A single page IMDb clone project built in C# ASP.net and MSSQL. The app allows the user to search, preview, add and favourite movies through a simple, clean navigation interface.
 
+<img src="https://github.com/ocanica/MovieDB/blob/master/images/capture1.PNG" width="750">
+<img src="https://github.com/ocanica/MovieDB/blob/master/images/capture2.PNG" width="750">
+<img src="https://github.com/ocanica/MovieDB/blob/master/images/capture3.PNG" width="750">
+
 ### Getting Started
 Simply clone or fork (to contribute). Besides requiring MSSQL all other dependencies are already pre-installed i.e. jQuery.
 

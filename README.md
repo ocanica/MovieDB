@@ -14,7 +14,9 @@ The app is unpublished and currently not hosted on any servers. So in order to r
 
 
 ### Built With
- - C# ASP.net
+ - C# ASP.NET
+ - Entity Framework
+ - LINQ
  - MSSQL Express
  - jQuery
  - Bootstrap

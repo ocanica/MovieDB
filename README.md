@@ -22,4 +22,4 @@ Latest version is available under the master branch in this repo.
  - Lloyd Headbush - https://github.com/ocanica
 
 ### License
-This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/LinKCoding/imdb-clone/blob/master/LICENSE.md) file for full details.
+This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/ocanica/MovieDB/blob/master/LICENSE) file for full details.

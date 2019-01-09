@@ -1,6 +1,6 @@
 # MovieDB
 
-A single page IMDb clone project built in C# ASP.net and MSSQL. The app allows the user to search, preview, add and favourite movies through a simple, clean navigation interface.
+A single page IMDb clone project built in C# ASP.net and MSSQL. The app allows the user to search, preview, add and favourite movies through a simple, clean navigation interface. Implements the [OMDb API](http://www.omdbapi.com/) web service to collect movie resources.
 
 <img src="https://github.com/ocanica/MovieDB/blob/master/images/capture1.PNG" width="750">
 <img src="https://github.com/ocanica/MovieDB/blob/master/images/capture2.PNG" width="750">
